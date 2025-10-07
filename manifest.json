@@ -1,0 +1,39 @@
+{
+  "name": "Brightcove Event Scheduler",
+  "description": "Brightcove event scheduler chrome extension",
+  "version": "3.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["*://studio.brightcove.com/*"],
+  "icons": {
+    "16": "images/logo/SPOTIFY_LOGO_SQUARE_BLACK_16.png",
+    "48": "images/logo/SPOTIFY_LOGO_SQUARE_BLACK_48.png",
+    "128": "images/logo/SPOTIFY_LOGO_SQUARE_BLACK_128.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://studio.brightcove.com/*"],
+    "run_at": "document_end",
+    "js": ["contentScript.js"]
+  }],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Brightcove Event Scheduler"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens index.html"
+    }
+  },
+  "web_accessible_resources": [{
+    "resources": [
+      "spotifyEventsScheduler.js",
+      "spotifyEventsScheduler.css",
+      "images/search/searchicon.png"
+    ],
+    "matches": ["*://studio.brightcove.com/*"]
+  }]
+}
