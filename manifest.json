@@ -36,4 +36,40 @@
     ],
     "matches": ["*://studio.brightcove.com/*"]
   }]
-}
+}diff --git a/manifest.json b/manifest.json
+index f935eefda493882f9b8a4af36b0a30248e92b778..254b954102d999f33fcfe7e4cbfa70491b09b1d6 100644
+--- a/manifest.json
++++ b/manifest.json
+@@ -10,30 +10,31 @@
+     "48": "images/logo/SPOTIFY_LOGO_SQUARE_BLACK_48.png",
+     "128": "images/logo/SPOTIFY_LOGO_SQUARE_BLACK_128.png"
+   },
+   "content_scripts": [{
+     "matches": ["*://studio.brightcove.com/*"],
+     "run_at": "document_end",
+     "js": ["contentScript.js"]
+   }],
+   "action": {
+     "default_popup": "index.html",
+     "default_title": "Brightcove Event Scheduler"
+   },
+   "commands": {
+     "_execute_action": {
+       "suggested_key": {
+         "default": "Ctrl+Shift+F",
+         "mac": "MacCtrl+Shift+F"
+       },
+       "description": "Opens index.html"
+     }
+   },
+   "web_accessible_resources": [{
+     "resources": [
+       "spotifyEventsScheduler.js",
+       "spotifyEventsScheduler.css",
++      "images/searchicon.png",
+       "images/search/searchicon.png"
+     ],
+     "matches": ["*://studio.brightcove.com/*"]
+   }]
+-}
++}
